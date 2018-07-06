@@ -21,6 +21,13 @@
     <link href="css/lib/owl.theme.default.min.css" rel="stylesheet" />
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/lib/sweetalert/sweetalert.css" rel="stylesheet">
+    <!--bug fix-->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/config.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
     <!--[if lt IE 9]>
@@ -138,7 +145,7 @@
                         </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-beer"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="snacks.html">Snacks</a></li>
+                                <li><a href="#">Snacks</a></li>
                                 <li><a href="#">Drinks</a></li>
                                 <li><a href="#">Breakfast</a></li>
                                 <li><a href="#">Lunch</a></li>
@@ -176,11 +183,11 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Welcome to iDiner</h3> </div>
+                    <h3 class="text-primary">iDiner Menu</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">iDiner</a></li>
-                        <li class="breadcrumb-item active">Home</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">iDiner Menu</a></li>
+                        <li class="breadcrumb-item active">Snacks</li>
                     </ol>
                 </div>
             </div>
@@ -188,149 +195,7 @@
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                <div class="row">
-                <!-- Column -->
-                    <div class="col-lg-12">
-                        <div class="card">
-                        <!-- Nav tabs -->
-                            <ul class="nav nav-tabs profile-tab" role="tablist">
-                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#snacks-home" role="tab">Snacks</a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#snacks-more" role="tab">Read More</a> </li>
-                            </ul>
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="snacks-home" role="tabpanel">
-                                    <div class="card-body">
-                                        <div class="profiletimeline">
-                                            <div class="sl-item">
-                                                <div class="sl-right">
-                                                    <p>"Theres no better feeling in the world than a warm pizza box on your lap"</p>
-                                                    <div class="row">
-                                                        <div class="col-lg-3 col-md-6 m-b-20"><img src="images/snacks/snacks1.jpg" class="img-responsive radius" /></div>
-                                                        <div class="col-lg-3 col-md-6 m-b-20"><img src="images/snacks/snacks2.jpg" class="img-responsive radius" /></div>
-                                                        <div class="col-lg-3 col-md-6 m-b-20"><img src="images/snacks/snacks3.jpg" class="img-responsive radius" /></div>
-                                                        <div class="col-lg-3 col-md-6 m-b-20"><img src="images/snacks/snacks4.jpg" class="img-responsive radius" /></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--second tab-->
-                                <div class="tab-pane" id="snacks-more" role="tabpanel">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-3 col-xs-6 b-r"> 
-                                                <strong>iDiner Snacks</strong>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <p class="m-t-30">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus
-                                            elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
-                                            it to make a type specimen book. It has survived not only five centuries </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-
-                                    <!-- Column -->
-                                    <div class="col-lg-12">
-                                            <div class="card">
-                                            <!-- Nav tabs -->
-                                                <ul class="nav nav-tabs profile-tab" role="tablist">
-                                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#drinks-home" role="tab">Drinks</a> </li>
-                                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#drinks-more" role="tab">Read More</a> </li>
-                                                </ul>
-                                                <!-- Tab panes -->
-                                                <div class="tab-content">
-                                                    <div class="tab-pane active" id="drinks-home" role="tabpanel">
-                                                        <div class="card-body">
-                                                            <div class="profiletimeline">
-                                                                <div class="sl-item">
-                                                                    <div class="sl-right">
-                                                                        <p>"No man in the world has more courage than the man who can stop after eating one peanut."</p>
-                                                                        <div class="row">
-                                                                            <div class="col-lg-3 col-md-6 m-b-20"><img src="images/drinks/drinks1.jpg" class="img-responsive radius" /></div>
-                                                                            <div class="col-lg-3 col-md-6 m-b-20"><img src="images/drinks/drinks2.jpg" class="img-responsive radius" /></div>
-                                                                            <div class="col-lg-3 col-md-6 m-b-20"><img src="images/drinks/drinks3.jpg" class="img-responsive radius" /></div>
-                                                                            <div class="col-lg-3 col-md-6 m-b-20"><img src="images/drinks/drinks4.jpg" class="img-responsive radius" /></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <hr>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--second tab-->
-                                                    <div class="tab-pane" id="drinks-more" role="tabpanel">
-                                                        <div class="card-body">
-                                                            <div class="row">
-                                                                <div class="col-md-3 col-xs-6 b-r"> 
-                                                                    <strong>iDiner Drinks</strong>
-                                                                </div>
-                                                            </div>
-                                                            <hr>
-                                                            <p class="m-t-30">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus
-                                                                elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
-                                                                it to make a type specimen book. It has survived not only five centuries </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Column -->
-                    <!-- Column -->
-                    <div class="col-lg-12">
-                            <div class="card">
-                            <!-- Nav tabs -->
-                                <ul class="nav nav-tabs profile-tab" role="tablist">
-                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#dishes-home" role="tab">Main Dishes</a> </li>
-                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#dishes-more" role="tab">Read More</a> </li>
-                                </ul>
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="dishes-home" role="tabpanel">
-                                        <div class="card-body">
-                                            <div class="profiletimeline">
-                                                <div class="sl-item">
-                                                    <div class="sl-right">
-                                                        <p>"One of the very nicest things in life is how we must regularly stop whatever it is we are doing and devote our attention to eating."</p>
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-6 m-b-20"><img src="images/mainDishes/main1.jpg" class="img-responsive radius" /></div>
-                                                            <div class="col-lg-3 col-md-6 m-b-20"><img src="images/mainDishes/main2.jpg" class="img-responsive radius" /></div>
-                                                            <div class="col-lg-3 col-md-6 m-b-20"><img src="images/mainDishes/main3.jpg" class="img-responsive radius" /></div>
-                                                            <div class="col-lg-3 col-md-6 m-b-20"><img src="images/mainDishes/main4.jpg" class="img-responsive radius" /></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--second tab-->
-                                    <div class="tab-pane" id="dishes-more" role="tabpanel">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-3 col-xs-6 b-r"> 
-                                                    <strong>iDiner Main Dishes</strong>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <p class="m-t-30">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus
-                                                elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
-                                                it to make a type specimen book. It has survived not only five centuries </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Column -->
+                <div class="row" id="populate-snacks">
                 </div>
 
 
@@ -344,8 +209,6 @@
         <!-- End Page wrapper  -->
     </div>
     <!-- End Wrapper -->
-    <!--bug fix-->
-    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
     <!-- All Jquery -->
     <script src="js/lib/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
@@ -378,10 +241,13 @@
 
     <script src="js/lib/owl-carousel/owl.carousel.min.js"></script>
     <script src="js/lib/owl-carousel/owl.carousel-init.js"></script>
+    <script src="js/lib/sweetalert/sweetalert.min.js"></script>
 
     <!-- scripit init-->
 
     <script src="js/scripts.js"></script>
+    <script src="js/snacks.js"></script>
+    <script src="js/cart.js"></script>
 
 </body>
 
