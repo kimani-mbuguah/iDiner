@@ -102,7 +102,7 @@ $(function() {
             firebase.auth().createUserWithEmailAndPassword(email, password).then(()=>{
                 document.location.href = 'index.html';
             }).catch(function(error) {
-                // Handle Errors here.
+                // error handling
                 //var errorCode = error.code;
                 var errorMessage = error.message;
                 $("#signup_credentials_error_message").html(errorMessage);
