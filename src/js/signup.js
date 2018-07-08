@@ -97,10 +97,23 @@ $(function() {
 
         if(error_password == false && error_email == false && error_retype_password == false) {
             let email = document.getElementById('email').value;
-            let password = document.getElementById('pass1').value;
+			let password = document.getElementById('pass1').value;
+			let db = firebase.firestore();
             
             firebase.auth().createUserWithEmailAndPassword(email, password).then(()=>{
-                document.location.href = 'index.html';
+				db.collection('users').doc().set({
+					email: email,
+					name: 'john doe',
+					avatar: 'default',
+					is_admin: 'no',
+					member_since: (+new Date())
+				})
+				.then(function() {
+					document.location.href = 'index.html';
+				})
+				.catch(function(error) {
+					console.error("Error writing document: ", error);
+				});
             }).catch(function(error) {
                 // error handling
                 //var errorCode = error.code;

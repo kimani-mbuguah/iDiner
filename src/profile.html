@@ -13,22 +13,12 @@
     <title>iDiner</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="css/lib/toastr/toastr.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-
-    <link href="css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
-    <link href="css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
-    <link href="css/lib/owl.carousel.min.css" rel="stylesheet" />
-    <link href="css/lib/owl.theme.default.min.css" rel="stylesheet" />
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/lib/sweetalert/sweetalert.css" rel="stylesheet">
-    <!--bug fix-->
     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-    <!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/config.js"></script>
+    <script src="js/config.js"></script>   
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
     <!--[if lt IE 9]>
@@ -45,7 +35,6 @@
     </div>
     <!-- Main wrapper  -->
     <div id="main-wrapper">
-        <!-- header header  -->
         <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
@@ -62,6 +51,11 @@
                         <!-- This is  -->
                         <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
                         <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                        <!-- Search -->
+                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                        </li>
                         <!-- Messages -->
                         <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-th-large"></i></a>
                             <div class="dropdown-menu animated zoomIn">
@@ -122,13 +116,17 @@
                     </ul>
                     <!-- User profile and search -->
                     <ul class="navbar-nav my-lg-0">
-
-                        <!-- Search -->
-                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
                         
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                                <ul class="dropdown-user">
+                                    <li><a href="javascript:;" data-toggle="modal" data-target="#updateProfileModal"><i class="ti-user"></i> Update Profile</a></li>
+                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -142,11 +140,11 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
-                        <li> <a class="has-arrow  " href="index.html" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Home <span class="label label-rouded label-primary pull-right">2</span></span></a>        
+                        <li> <a class="has-arrow active  " href="index.html" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Home</a>        
                         </li>
-                        <li> <a class="has-arrow  active " href="#" aria-expanded="false"><i class="fa fa-beer"></i><span class="hide-menu">Menu</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-beer"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="#">Snacks</a></li>
+                                <li><a href="snacks.html">Snacks</a></li>
                                 <li><a href="drinks.html">Drinks</a></li>
                                 <li><a href="breakfast.html">Breakfast</a></li>
                                 <li><a href="lunch.html">Lunch</a></li>
@@ -161,7 +159,7 @@
                         
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart"></i><span class="hide-menu">My Cart</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="#">View Cart</a></li>
+                                <li><a href="mycart.html">View Cart</a></li>
                                 <li><a href="#">Checkout</a></li>
                             </ul>
                         </li>
@@ -177,11 +175,11 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">iDiner Menu</h3> </div>
+                    <h3 class="text-primary">Dashboard</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">iDiner Menu</a></li>
-                        <li class="breadcrumb-item active">Snacks</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">My Profile</li>
                     </ol>
                 </div>
             </div>
@@ -189,9 +187,19 @@
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                <div class="row" id="populate-snacks">
-                </div>
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-two" id="user-profile">
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
 
                 <!-- End PAge Content -->
             </div>
@@ -202,12 +210,64 @@
         </div>
         <!-- End Page wrapper  -->
     </div>
+
+    <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="updateProfileModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+                <form action="javascript:;" novalidate="novalidate">
+                    <div class="modal-header">
+                    <h5 class="modal-title">Change Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="">
+                            <div class="form-group">
+                                <label for="oldPass">
+                                    old Password
+                                </label>
+                                <input type="password"  data-val="true" data-val-required="this is Required Field" class="form-control" name="oldPass" id="oldPass"/>
+                                <span class="field-validation-valid text-danger" data-valmsg-for="oldPass" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPass">
+                                    New Password
+                                </label>
+                                <input type="password" data-val="true" data-val-required="this is Required Field" class="form-control" name="newPass" id="newPass"/>
+                                <span class="field-validation-valid text-danger"  data-valmsg-for="newPass" data-valmsg-replace="true"></span>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPass">
+                                    Confirm Password
+                                </label>
+                                <input type="password" data-val-equalto="Password not Match ", data-val-equalto-other="newPass" data-val="true" data-val-required="this is Required Field" class="form-control" name="confirmPass" id="confirmPass"/>
+                                <span class="field-validation-valid text-danger" data-valmsg-for="confirmPass" data-valmsg-replace="true"></span>
+                                
+                            </div>
+                                        
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+      </div>
+
     <!-- End Wrapper -->
     <!-- All Jquery -->
     <script src="js/lib/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="js/lib/bootstrap/js/popper.min.js"></script>
     <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/lib/form-validation/jquery.validate.min.js"></script>
+    <script src="js/lib/form-validation/jquery.validate.unobtrusive.min.js"></script>
+    <script src="js/lib/jquery.nicescroll/jquery.nicescroll.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
     <script src="js/jquery.slimscroll.js"></script>
     <!--Menu sidebar -->
@@ -215,35 +275,19 @@
     <!--stickey kit -->
     <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
-
-
-    <!-- Amchart -->
-     <script src="js/lib/morris-chart/raphael-min.js"></script>
-    <script src="js/lib/morris-chart/morris.js"></script>
-    <script src="js/lib/morris-chart/dashboard1-init.js"></script>
-
-
-	<script src="js/lib/calendar-2/moment.latest.min.js"></script>
-    <!-- scripit init-->
-    <script src="js/lib/calendar-2/semantic.ui.min.js"></script>
-    <!-- scripit init-->
-    <script src="js/lib/calendar-2/prism.min.js"></script>
-    <!-- scripit init-->
-    <script src="js/lib/calendar-2/pignose.calendar.min.js"></script>
-    <!-- scripit init-->
-    <script src="js/lib/calendar-2/pignose.init.js"></script>
-
-    <script src="js/lib/owl-carousel/owl.carousel.min.js"></script>
-    <script src="js/lib/owl-carousel/owl.carousel-init.js"></script>
-    <script src="js/lib/sweetalert/sweetalert.min.js"></script>
-
-    <!-- scripit init-->
-
     <script src="js/scripts.js"></script>
-    <script src="js/snacks.js"></script>
-    <script src="js/cart.js"></script>
-    <script src="js/lib/toastr/toastr.min.js"></script>
-
+      <script>
+          $(function(){
+            $("html").niceScroll({
+                cursorcolor:"#16385d",
+                cursorwidth:"5px",
+                background:"#fff",
+                cursorborder:"1px solid #5c4ac7",
+                cursorborderradius:0
+                });  // a world f
+          });
+      </script>
+      <script src="js/loadProfile.js"></script>
 </body>
 
 </html>
